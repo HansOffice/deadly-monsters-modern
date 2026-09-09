@@ -1,89 +1,59 @@
-# Deadly Monsters — NeoForge 1.21.1 移植版
+# Deadly Monsters (NeoForge 1.21.1)
 
-这是 Deadly Monsters 从 Minecraft Forge 1.12.2 原生移植到 Minecraft 1.21.1 / NeoForge 的分支
+经典恐怖怪物模组 Deadly Monsters 的 Minecraft 1.21.1 / NeoForge 移植版。
 
-移植尽量保留原版 `dmonsters` 注册 ID、资源、玩法身份和可见行为，同时使用 Minecraft 1.21.1 与 NeoForge 21.1 的原生机制替代旧 Forge API
+移植自 [bigbang87/deadly-monsters](https://github.com/bigbang87/deadly-monsters) 与 [ACGaming 的 1.12.2 维护版](https://github.com/ACGaming/deadly-monsters)。保留了原版的全部 12 种怪物、防御工事与特色道具。
 
-## 目标环境
+## 运行环境
 
 - Minecraft **1.21.1**
-- NeoForge **21.1.212**
-- ModDevGradle **2.0.146**
-- Gradle **9.2.1**
+- NeoForge **21.1.212+**
 - Java **21**
-- Mod ID `dmonsters`
 
-## 当前状态
+前往 [Releases](https://github.com/HansOffice/deadly-monsters-modern/releases) 下载对应构建版本。
 
-仓库侧 1.21.1 回迁已经完成，并已在 GitHub Actions 使用 JDK 21 执行真实 `gradle build` 验证
+## 内容介绍
 
-构建通过不等于实机验证完成，客户端启动、专用服务器启动、模型观感、自然生成、配置行为和兼容模组联合运行仍按 [`测试清单.md`](测试清单.md) 复验
+### 生物
+- **突变史蒂夫 (Mutant Steve)**：白天会自燃的高速近战怪物，攻击会破坏周围方块
+- **霜冻异怪 (Freezer)**：生成于极寒群系，攻击附带减速，行走时会冻结脚下的水面
+- **攀爬者 (Climber)**：能攀爬垂直墙壁，免疫蜘蛛网减速与中毒效果
+- **粘液飞头 (Entrail)**：在空中缓慢飘浮，受到非火焰伤害时会分裂出史莱姆
+- **腹中胎儿 (Unborn Baby)**：身形小巧且移速较快，靠近时会让玩家间歇失明
+- **堕落领袖 (Fallen Leader)**：近战吸血，掉落击退极强的堕落领袖脊柱
+- **血腥少女 (Bloody Maiden)**：平时沉睡伪装成普通装饰，惊醒后攻击力极高
+- **僵尸鸡 (Zombie Chicken)**：敌对小鸡，会主动攻击玩家并感染普通鸡
+- **礼盒怪 (Present)**：伪装成礼物盒，受到攻击后把玩家关进牢笼并刷新苦力怕
+- **陌生人 (Stranger)**：潜伏在暗处避开直视，靠近时伴随惊悚音效
+- **闹鬼牛 (Haunted Cow)**：必须用剑或弓击杀，使用其他武器攻击会强制将时间切到夜晚
+- **异形水鬼 (Topielec)**：水下高速追踪，会将玩家强行往深水里拖拽
 
-当前包含
-
-- 12 种原版怪物及实体类型、属性、AI、模型和渲染器
-- 12 种原版怪物生成器物品
-- 原版方块和特殊行为
-- Rebar、四种 Harpoon、Lucky Egg、Dagon 与怪物掉落功能物品
-- Lucky Egg 与 Dagon 投射物
-- 原版贴图、声音、Logo 与 credits
-- 1.21.1 使用的 blockstate、方块模型与 `models/item` 物品模型
-- 17 个标准合成配方
-- 实体与方块战利品表
-- 怪物生命、攻击、速度、自然生成权重和禁用配置
-- Mutant Steve、Unborn Baby、Haunted Cow、Topielec 专用配置
-- NeoForge biome modifier 自然生成
-- Barbed Wire 的 1.21.1 CUTOUT 渲染声明
-
-详细技术决策见 [`移植说明.md`](移植说明.md)
-
-## 配方查看与信息显示
-
-Deadly Monsters 没有自定义配方类型、配方菜单、特殊工作台或 BlockEntity 数据面板
-
-现有 17 个配方全部使用 Minecraft 标准 crafting 体系，因此 JEI 与 REI 不需要 Deadly Monsters 专用桥接层即可读取标准配方
-
-Jade 的基础方块和实体信息同样可以依赖标准注册信息，本分支不添加空壳 provider 或硬依赖
-
-这些结论属于结构兼容判断，联合实机验证状态见 [`兼容性.md`](兼容性.md) 与 [`测试清单.md`](测试清单.md)
-
-## 开发运行
-
-本仓库不包含 Gradle Wrapper
-
-```bash
-gradle runClient
-gradle runServer
-gradle runData
-gradle build
-```
-
-开发和构建统一使用 JDK 21
-
-GitHub Actions 默认只保留手动构建入口，不在每次推送时自动运行
+### 防御工事与物品
+- **强化建筑**：手持强化钢筋右键石头或圆石可转化为抗爆方块，潜行右键可取回钢筋
+- **铁丝网与围栏**：生物穿过时会受到持续伤害并大幅减速
+- **灵魂之眼**：放置后会吞噬靠近的生物，有几率吐出绿宝石或铁锭
+- **圣诞树与礼物盒**：圣诞树会周期性结出礼物盒，破坏随机获得物资或触发危险
+- **四阶鱼叉**：分为石、铁、钻石、黑曜石四档，水下击中可捕鱼，对水鬼有克制增伤
+- **特殊战利品**：幸运蛋（随机触发效果）、血腥少女之心（生成水或岩浆源）、胎儿之眼（完整采集方块）、日光降临（直接将黑夜切为白天）等
 
 ## 配置
 
-NeoForge 首次运行后会生成 Deadly Monsters 公共配置
+配置文件位于 `config/dmonsters-common.toml`：
+- 可统一调整全局生命、伤害与移速倍率
+- 每种怪物均可单独调整数值倍率、生成权重，或直接关闭生成
+- 支持开关突变史蒂夫破坏方块、闹鬼牛强制转夜、水鬼限制鱼叉伤害等机制
 
-`spawnRate` 与 `disabled` 会在生物群系生成列表构建时读取，修改后需要完整重启对应客户端进程或专用服务器进程
+## 构建
 
-其他倍率和行为开关同样按启动时配置状态工作，不提供热重载承诺
+```bash
+gradle build
+```
 
-## 1.21.1 回迁原则
+构建产物输出在 `build/libs/` 目录下。
 
-这是 1.21.1 原生回迁，不是 26.2 API 兼容垫片
+## 鸣谢与协议
 
-- 1.21.1 使用旧实体模型与渲染器签名，不保留 26.2 RenderState 中间层
-- 1.21.1 使用 `ResourceLocation`、旧 `MobSpawnType` 与对应实体、方块、物品接口
-- Sunlight Drop 与 Haunted Cow 使用 1.21.1 `getDayTime` / `setDayTime` 世界时间接口
-- Barbed Wire 在 1.21.1 显式使用 CUTOUT 渲染层，保持原版透明纹理行为
-- 1.21.1 继续使用 `assets/dmonsters/models/item`，不保留 1.21.4 才引入的 `assets/<namespace>/items` 物品定义目录
-- Topielec 保留深水拖拽的可见行为，同时限制高成本深水搜索刷新频率
-- 不重新接入已经过时的 Hostile Worlds Invasions、Mantle、CoroUtil 等旧版硬依赖
+- 原模组：[bigbang87/deadly-monsters](https://github.com/bigbang87/deadly-monsters)
+- 1.12.2 修复版：[ACGaming/deadly-monsters](https://github.com/ACGaming/deadly-monsters)
 
-## 上游与许可
-
-移植基线与原始资源来自 Deadly Monsters 1.12.2 项目，上游署名继续保留 `bigbang87` 原作者信息
-
-仓库保留原始 MIT License 与版权文本 [`LICENSE`](LICENSE)
+本项目采用 [MIT](LICENSE) 协议开源。

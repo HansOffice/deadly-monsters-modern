@@ -1,11 +1,11 @@
 license="${mod_license}"
-issueTrackerURL="https://github.com/HansOffice/deadly-monsters/issues"
+issueTrackerURL="https://github.com/HansOffice/deadly-monsters-modern/issues"
 
 [[mods]]
 modId="${mod_id}"
 version="${mod_version}"
 displayName="${mod_name}"
-displayURL="https://github.com/HansOffice/deadly-monsters"
+displayURL="https://github.com/HansOffice/deadly-monsters-modern"
 authors="bigbang87（原作者）, HansOffice（1.21.1 移植）"
 description='''
 Deadly Monsters 原版 Minecraft 1.12.2 模组的 NeoForge 1.21.1 移植版

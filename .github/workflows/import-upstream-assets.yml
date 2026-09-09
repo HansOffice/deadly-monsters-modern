@@ -1,9 +1,6 @@
-name: Import upstream assets
+name: 手动导入上游资源
 
 on:
-  push:
-    paths:
-      - '.github/workflows/import-upstream-assets.yml'
   workflow_dispatch:
 
 permissions:
@@ -13,15 +10,15 @@ jobs:
   import-assets:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout port repository
+      - name: 检出移植仓库
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Fetch original Deadly Monsters assets
+      - name: 获取原版 Deadly Monsters 资源
         run: git clone --depth 1 https://github.com/ACGaming/deadly-monsters.git /tmp/deadly-monsters-upstream
 
-      - name: Copy binary assets into modern resource paths
+      - name: 复制二进制资源到当前资源路径
         shell: bash
         run: |
           set -euo pipefail
@@ -37,16 +34,16 @@ jobs:
           cp "$UP/credits.txt" "$DST/credits.txt"
           cp "$UP/sounds.json" "$DST/sounds.json"
 
-      - name: Commit imported assets
+      - name: 提交导入资源
         shell: bash
         run: |
           set -euo pipefail
           if [[ -z "$(git status --porcelain -- src/main/resources/assets/dmonsters)" ]]; then
-            echo 'Assets are already up to date.'
+            echo '资源已经是最新状态'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add src/main/resources/assets/dmonsters
-          git commit -m 'Import original Deadly Monsters binary assets'
+          git commit -m '导入原版 Deadly Monsters 二进制资源'
           git push origin HEAD:main

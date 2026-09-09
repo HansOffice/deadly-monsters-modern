@@ -21,15 +21,11 @@ sourceSets.main.resources {
 repositories {
 }
 
-// Minecraft 26.2 ships on Java 25.
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 
 neoForge {
     version = project.neo_version
 
-    // This port is verified primarily in real client/server runs. GameTest is intentionally
-    // not part of the default workflow because most Deadly Monsters behavior is visual,
-    // AI-, timing-, sound-, collision- or player-interaction-dependent.
     runs {
         client {
             client()
@@ -63,8 +59,6 @@ configurations {
 }
 
 dependencies {
-    // Legacy 1.12.2 dependencies are intentionally not carried forward.
-    // Modern integrations will be reintroduced only if a 26.2-compatible API is required.
 }
 
 var generateModMetadata = tasks.register('generateModMetadata', ProcessResources) {

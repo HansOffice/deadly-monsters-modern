@@ -9,9 +9,9 @@
     "HansOffice（1.21.1 Fabric 移植）"
   ],
   "contact": {
-    "homepage": "https://github.com/HansOffice/deadly-monsters",
-    "sources": "https://github.com/HansOffice/deadly-monsters",
-    "issues": "https://github.com/HansOffice/deadly-monsters/issues"
+    "homepage": "https://github.com/HansOffice/deadly-monsters-modern",
+    "sources": "https://github.com/HansOffice/deadly-monsters-modern",
+    "issues": "https://github.com/HansOffice/deadly-monsters-modern/issues"
   },
   "license": "MIT",
   "icon": "assets/dmonsters/logo.png",

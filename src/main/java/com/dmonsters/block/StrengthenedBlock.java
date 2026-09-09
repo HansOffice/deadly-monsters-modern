@@ -12,7 +12,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 
-/** Shared behavior for the original strengthened stone variants. */
 public final class StrengthenedBlock extends Block {
     private final BlockState revertedState;
 

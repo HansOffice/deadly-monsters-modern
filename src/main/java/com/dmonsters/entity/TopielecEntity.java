@@ -14,7 +14,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
-/** Native 26.2 port of the original Topielec water monster. */
 public final class TopielecEntity extends Monster {
     private Vec3 movementVector = Vec3.ZERO;
     private Vec3 lastWaterPosition;
@@ -26,7 +25,6 @@ public final class TopielecEntity extends Monster {
 
     @Override
     protected void registerGoals() {
-        // The original Topielec used fully custom vector-based movement rather than path navigation.
     }
 
     @Override
@@ -68,9 +66,6 @@ public final class TopielecEntity extends Monster {
         LivingEntity target = this.getTarget();
         if (target instanceof Player player) {
             if (this.distanceTo(player) < 2.0F && !player.isCreative() && !player.isPassenger()) {
-                // Original attack AI pins the victim to the Topielec and then tries to carry both
-                // toward the deepest nearby water column. The 1.12.2 timer accidentally scanned
-                // every tick; 26.2 refreshes the expensive search every 40 ticks instead.
                 player.teleportTo(this.getX(), this.getY(), this.getZ());
                 if (this.deepWaterRefresh-- <= 0 || this.movementVector.lengthSqr() < 1.0E-4D) {
                     this.deepWaterRefresh = 40;
@@ -101,11 +96,6 @@ public final class TopielecEntity extends Monster {
         this.setDeltaMovement(this.movementVector);
     }
 
-    /**
-     * Finds a direction toward a nearby column with the greatest contiguous water depth beneath
-     * the Topielec. Sampling density is bounded so large configured search distances do not repeat
-     * the original O(radius² × depth) scan every game tick.
-     */
     private Vec3 findDeepWaterDirection(ServerLevel level) {
         int radius = DeadlyMonstersConfig.VALUES.topielecSearchDistance.get();
         int step = Math.max(1, radius / 16);

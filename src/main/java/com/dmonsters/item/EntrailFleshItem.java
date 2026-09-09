@@ -8,7 +8,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
-/** Converts a struck living target into an Entrail, consuming one flesh. */
 public final class EntrailFleshItem extends Item {
     public EntrailFleshItem(Properties properties) {
         super(properties);

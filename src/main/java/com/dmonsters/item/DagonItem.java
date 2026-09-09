@@ -13,7 +13,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-/** Throwable Dagon item. */
 public final class DagonItem extends Item {
     public DagonItem(Properties properties) {
         super(properties);

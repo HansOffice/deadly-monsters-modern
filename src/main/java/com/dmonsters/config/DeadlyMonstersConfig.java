@@ -32,7 +32,6 @@ import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.player.AttackEntityEvent;
 import org.apache.commons.lang3.tuple.Pair;
 
-/** NeoForge configuration replacement for the original Forge 1.12.2 config. */
 public final class DeadlyMonstersConfig {
     public static final Settings VALUES;
     public static final ModConfigSpec SPEC;
@@ -50,7 +49,6 @@ public final class DeadlyMonstersConfig {
         return settings == null || !settings.disabled.get();
     }
 
-    /** Spawn weighting used when the config-aware biome modifiers are applied during world/server startup. */
     public static int spawnRate(EntityType<?> type) {
         MonsterSettings settings = settingsFor(type);
         return settings == null ? 0 : settings.spawnRate.get();
@@ -191,9 +189,12 @@ public final class DeadlyMonstersConfig {
 
         private Settings(ModConfigSpec.Builder builder) {
             builder.push("general");
-            globalHealthMultiplier = builder.comment("Global monster health multiplier.").defineInRange("globalHealthMultiplier", 1.0D, 0.01D, 100.0D);
-            globalStrengthMultiplier = builder.comment("Global monster attack multiplier.").defineInRange("globalStrengthMultiplier", 1.0D, 0.01D, 100.0D);
-            globalSpeedMultiplier = builder.comment("Global monster movement speed multiplier.").defineInRange("globalSpeedMultiplier", 1.0D, 0.01D, 10.0D);
+            globalHealthMultiplier = builder.comment("全模组怪物生命全局倍率 (取值范围 0.01 ~ 100.0，默认 1.0)")
+                    .defineInRange("globalHealthMultiplier", 1.0D, 0.01D, 100.0D);
+            globalStrengthMultiplier = builder.comment("全模组怪物攻击伤害全局倍率 (取值范围 0.01 ~ 100.0，默认 1.0)")
+                    .defineInRange("globalStrengthMultiplier", 1.0D, 0.01D, 100.0D);
+            globalSpeedMultiplier = builder.comment("全模组怪物移动速度全局倍率 (取值范围 0.01 ~ 10.0，默认 1.0)")
+                    .defineInRange("globalSpeedMultiplier", 1.0D, 0.01D, 10.0D);
             builder.pop();
 
             mutantSteve = new MonsterSettings(builder, "mutant_steve", 8);
@@ -210,24 +211,30 @@ public final class DeadlyMonstersConfig {
             topielec = new MonsterSettings(builder, "topielec", 8);
 
             builder.push("mutant_steve");
-            mutantSteveBreakBlocks = builder.define("breakBlocks", true);
+            mutantSteveBreakBlocks = builder.comment("突变史蒂夫特殊攻击是否可破坏周围方块")
+                    .define("breakBlocks", true);
             builder.pop();
 
             builder.push("unborn_baby");
-            babyBlindness = builder.define("blindness", false);
+            babyBlindness = builder.comment("腹中胎儿锁定玩家时是否附加周期性失明光环")
+                    .define("blindness", false);
             builder.pop();
 
             builder.push("topielec");
-            topielecSearchDistance = builder.defineInRange("searchDistance", 16, 1, 128);
-            topielecHarpoonOnly = builder.define("harpoonOnly", false);
+            topielecSearchDistance = builder.comment("异形水鬼寻找深水域的索敌采样半径 (单位：方块，范围 1 ~ 128)")
+                    .defineInRange("searchDistance", 16, 1, 128);
+            topielecHarpoonOnly = builder.comment("是否限制异形水鬼仅能被鱼叉造成直接攻击伤害")
+                    .define("harpoonOnly", false);
             builder.pop();
 
             builder.push("haunted_cow");
-            hauntedCowValidWeapons = builder.defineList(
-                    "validWeapons",
-                    List.of("thaumicaugmentation:morphic_tool"),
-                    value -> value instanceof String);
-            hauntedCowDisableTimeChange = builder.define("disableTimeChange", false);
+            hauntedCowValidWeapons = builder.comment("攻击闹鬼牛不受世界转夜惩罚的有效武器物品 ID 列表")
+                    .defineList(
+                            "validWeapons",
+                            List.of("thaumicaugmentation:morphic_tool"),
+                            value -> value instanceof String);
+            hauntedCowDisableTimeChange = builder.comment("是否关闭闹鬼牛受到无效武器攻击时强制将世界时间切至夜晚的惩罚机制")
+                    .define("disableTimeChange", false);
             builder.pop();
         }
     }
@@ -241,12 +248,16 @@ public final class DeadlyMonstersConfig {
 
         private MonsterSettings(ModConfigSpec.Builder builder, String name, int defaultSpawnRate) {
             builder.push(name);
-            healthMultiplier = builder.defineInRange("healthMultiplier", 1.0D, 0.01D, 100.0D);
-            strengthMultiplier = builder.defineInRange("strengthMultiplier", 1.0D, 0.01D, 100.0D);
-            speedMultiplier = builder.defineInRange("speedMultiplier", 1.0D, 0.01D, 10.0D);
-            spawnRate = builder.comment("Natural spawn weighting. Restart the world/server after changing this value.")
+            healthMultiplier = builder.comment("独立生命倍率，最终生命 = 基础生命 * 全局倍率 * 独立倍率")
+                    .defineInRange("healthMultiplier", 1.0D, 0.01D, 100.0D);
+            strengthMultiplier = builder.comment("独立攻击倍率，最终伤害 = 基础伤害 * 全局倍率 * 独立倍率")
+                    .defineInRange("strengthMultiplier", 1.0D, 0.01D, 100.0D);
+            speedMultiplier = builder.comment("独立移速倍率，最终移速 = 基础移速 * 全局倍率 * 独立倍率")
+                    .defineInRange("speedMultiplier", 1.0D, 0.01D, 10.0D);
+            spawnRate = builder.comment("自然生成权重，数值越大生成越频繁，修改后需重进世界或重启服务端生效")
                     .defineInRange("spawnRate", defaultSpawnRate, 0, 1000);
-            disabled = builder.comment("Disable natural spawning for this monster.").define("disabled", false);
+            disabled = builder.comment("是否彻底禁用该怪物的自然生成，设为 true 时该怪物将不会在世界中自然生成")
+                    .define("disabled", false);
             builder.pop();
         }
     }

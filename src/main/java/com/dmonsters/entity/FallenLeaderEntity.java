@@ -16,7 +16,6 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
-/** Native 26.2 port of the original Fallen Leader monster. */
 public final class FallenLeaderEntity extends Monster {
     public FallenLeaderEntity(EntityType<? extends Monster> type, Level level) {
         super(type, level);

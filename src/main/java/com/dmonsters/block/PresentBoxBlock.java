@@ -26,7 +26,6 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-/** Native 26.2 port of the original risky Christmas Present Box. */
 public final class PresentBoxBlock extends Block {
     private static final VoxelShape SHAPE = Block.box(2.08D, 0.0D, 2.08D, 13.92D, 12.0D, 13.92D);
     private static final List<EntityType<? extends Mob>> MONSTERS = List.of(

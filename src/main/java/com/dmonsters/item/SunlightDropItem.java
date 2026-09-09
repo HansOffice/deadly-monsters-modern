@@ -18,7 +18,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gamerules.GameRules;
 
-/** Moves the Overworld clock to day when used at night. */
 public final class SunlightDropItem extends Item {
     public SunlightDropItem(Properties properties) {
         super(properties);

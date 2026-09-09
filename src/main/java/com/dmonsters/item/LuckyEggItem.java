@@ -12,7 +12,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-/** Throwable Lucky Egg item. */
 public final class LuckyEggItem extends Item {
     public LuckyEggItem(Properties properties) {
         super(properties);

@@ -17,7 +17,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jspecify.annotations.Nullable;
 
-/** Mesh fence segment that must remain linked to a pole within eight blocks. */
 public final class MeshFenceBlock extends FenceBlock {
     private static final int MAX_POLE_DISTANCE = 8;
 

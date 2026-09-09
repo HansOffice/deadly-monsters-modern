@@ -4,7 +4,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
-/** Heavy knockback weapon matching the original Fallen Leader Spine utility. */
 public final class FallenLeaderSpineItem extends Item {
     public FallenLeaderSpineItem(Properties properties) {
         super(properties);

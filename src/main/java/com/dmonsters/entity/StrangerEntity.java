@@ -17,7 +17,6 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
-/** Native 26.2 port of the original Stranger monster. */
 public final class StrangerEntity extends Monster {
     public StrangerEntity(EntityType<? extends Monster> type, Level level) {
         super(type, level);

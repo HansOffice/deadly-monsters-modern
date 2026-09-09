@@ -19,7 +19,6 @@ import net.minecraft.world.level.redstone.Orientation;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-/** Native 26.2 port of the original Dump block and sapling-growth interaction. */
 public final class DumpBlock extends Block {
     public static final IntegerProperty STACKS = IntegerProperty.create("stacks", 0, 15);
     private static final VoxelShape SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 6.4D, 12.0D);

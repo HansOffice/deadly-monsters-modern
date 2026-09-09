@@ -13,7 +13,6 @@ import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 
-/** Modern model-layer port of the original Present monster model. */
 public final class PresentModel extends EntityModel<LivingEntityRenderState> {
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(
             Identifier.fromNamespaceAndPath(DeadlyMonsters.MOD_ID, "present"), "main");

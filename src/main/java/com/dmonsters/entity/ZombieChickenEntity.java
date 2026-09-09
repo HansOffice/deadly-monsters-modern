@@ -19,7 +19,6 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
-/** Native 26.2 port of the original hostile Zombie Chicken. */
 public final class ZombieChickenEntity extends Monster {
     public ZombieChickenEntity(EntityType<? extends Monster> type, Level level) {
         super(type, level);

@@ -12,9 +12,6 @@ import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 
-/**
- * Modern model-layer port of the original 64x64 Freezer model.
- */
 public final class FreezerModel extends EntityModel<FreezerRenderState> {
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(
             Identifier.fromNamespaceAndPath(DeadlyMonsters.MOD_ID, "freezer"), "main");

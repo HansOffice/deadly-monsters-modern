@@ -26,7 +26,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gamerules.GameRules;
 
-/** Native 26.2 port of the original Mutant Steve monster. */
 public final class MutantSteveEntity extends Monster {
     private static final EntityDataAccessor<Boolean> DATA_ARMS_RAISED =
             SynchedEntityData.defineId(MutantSteveEntity.class, EntityDataSerializers.BOOLEAN);

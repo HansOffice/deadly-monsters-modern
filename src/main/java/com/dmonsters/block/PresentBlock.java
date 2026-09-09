@@ -10,7 +10,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 
-/** Temporary cage wall placed by the Present monster. */
 public final class PresentBlock extends Block {
     public static final EnumProperty<Color> COLOR = EnumProperty.create("color", Color.class);
 

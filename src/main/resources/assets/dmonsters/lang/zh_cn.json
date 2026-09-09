@@ -1,5 +1,5 @@
 {
-  "itemGroup.dmonsters": "致命怪物",
+  "itemGroup.dmonsters": "致命怪物：现代版",
 
   "block.dmonsters.strengthened_stone": "强化钢筋石头",
   "block.dmonsters.strengthened_cobblestone": "强化钢筋圆石",
@@ -54,16 +54,16 @@
   "item.dmonsters.mob_spawner_item_haunted_cow": "闹鬼牛之魂",
   "item.dmonsters.mob_spawner_item_topielec": "异形水鬼之魂",
 
-  "item.dmonsters.add_information.harpoon_1": "右键点击水有机会抓到一条鱼。你需要待在水里。",
-  "item.dmonsters.add_information.harpoon_2": "对付异形水鬼的好武器！",
-  "block.dmonsters.mesh_fence.description": "围栏柱之间的连接块",
-  "block.dmonsters.mesh_fence_pole.description": "铁围栏的角柱",
-  "block.dmonsters.barbed_wire.description": "下方需要铁围栏或围栏柱",
+  "item.dmonsters.add_information.harpoon_1": "身处水中右键水面有几率捕获鱼类",
+  "item.dmonsters.add_information.harpoon_2": "对付异形水鬼的克制武器",
+  "block.dmonsters.mesh_fence.description": "铁围栏角柱之间的网格连接方块",
+  "block.dmonsters.mesh_fence_pole.description": "铁围栏角柱支撑结构",
+  "block.dmonsters.barbed_wire.description": "仅可安装于铁围栏或围栏柱上方",
 
-  "msg.dmonsters.mesh_fence.error": "铁围栏只能放在其他铁围栏或围栏柱旁边。",
-  "msg.dmonsters.mesh_fence.too_far_from_pole": "铁围栏只能沿直线向围栏柱延伸最多 8 格。",
-  "msg.dmonsters.barbed_wire.error": "铁丝网只能放在铁围栏上。",
-  "msg.dmonsters.poopoo_pill.error": "你必须吃饱！",
-  "msg.dmonsters.haunted_cow": "使用剑或弓，否则月亮会发光！",
-  "msg.dmonsters.haunted_cow_time_disabled": "禁止更改时间。"
+  "msg.dmonsters.mesh_fence.error": "铁围栏仅可依附于相邻铁围栏或围栏柱放置",
+  "msg.dmonsters.mesh_fence.too_far_from_pole": "铁围栏沿直线距角柱最多延伸 8 格",
+  "msg.dmonsters.barbed_wire.error": "铁丝网仅可放置于铁围栏上方",
+  "msg.dmonsters.poopoo_pill.error": "需要处于饱腹状态",
+  "msg.dmonsters.haunted_cow": "必须使用剑或弓攻击，否则将引发黑夜降临",
+  "msg.dmonsters.haunted_cow_time_disabled": "世界时间变更已禁用"
 }

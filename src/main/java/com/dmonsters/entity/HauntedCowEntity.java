@@ -17,7 +17,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 
-/** Native 26.2 port of the original Haunted Cow monster. */
 public final class HauntedCowEntity extends Monster {
     public HauntedCowEntity(EntityType<? extends Monster> type, Level level) {
         super(type, level);

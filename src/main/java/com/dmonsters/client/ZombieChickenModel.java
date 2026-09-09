@@ -12,7 +12,6 @@ import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 
-/** 26.2 model port of the original 1.12.2 ModelZombieChicken geometry. */
 public final class ZombieChickenModel extends EntityModel<ZombieChickenRenderState> {
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(
             Identifier.fromNamespaceAndPath(DeadlyMonsters.MOD_ID, "zombie_chicken"), "main");
@@ -102,7 +101,6 @@ public final class ZombieChickenModel extends EntityModel<ZombieChickenRenderSta
         this.rightWing.yRot = 0.0F;
         this.rightWing.zRot = Mth.clamp(Mth.cos(state.walkAnimationPos + (float) Math.PI) * 2.4F, 0.2F, 100.0F);
 
-        // The original model intentionally kept the left wing in a fixed, damaged-looking pose.
         this.leftWing.xRot = -0.7807508F;
         this.leftWing.yRot = -0.0743572F;
         this.leftWing.zRot = -0.2974289F;

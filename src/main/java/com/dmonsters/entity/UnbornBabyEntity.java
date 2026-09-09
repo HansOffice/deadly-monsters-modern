@@ -21,7 +21,6 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
-/** Native 26.2 port of the original Unborn Baby monster. */
 public final class UnbornBabyEntity extends Monster {
     private int blindRefreshTick;
 

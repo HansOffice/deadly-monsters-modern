@@ -12,7 +12,6 @@ import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 
-/** Modern model-layer port of the original Mutant Steve model. */
 public final class MutantSteveModel extends EntityModel<MutantSteveRenderState> {
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(
             Identifier.fromNamespaceAndPath(DeadlyMonsters.MOD_ID, "mutant_steve"), "main");

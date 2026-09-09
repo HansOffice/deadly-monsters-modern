@@ -20,7 +20,6 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.AABB;
 
-/** Native 26.2 port of the original Soul Eye defensive block. */
 public final class SoulEyeBlock extends Block {
     public static final EnumProperty<Mode> MODE = EnumProperty.create("mode", Mode.class);
     private static final List<Item> SOUL_DROPS = List.of(

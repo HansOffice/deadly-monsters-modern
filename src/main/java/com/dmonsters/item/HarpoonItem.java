@@ -18,7 +18,6 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.item.context.UseOnContext;
 
-/** Reusable fishing/Topielec weapon matching the four original harpoon tiers. */
 public final class HarpoonItem extends Item {
     private final float topielecDamage;
 
@@ -43,8 +42,6 @@ public final class HarpoonItem extends Item {
         if (player.isInWater()) {
             context.getItemInHand().hurtAndBreak(1, player, context.getHand().asEquipmentSlot());
             if (level.getRandom().nextFloat() < 0.25F) {
-                // The 1.12.2 code built four metadata variants of Items.FISH and immediately
-                // reduced them back to Item objects, so all four entries actually dropped raw fish.
                 player.spawnAtLocation(level, Items.COD);
             }
         }

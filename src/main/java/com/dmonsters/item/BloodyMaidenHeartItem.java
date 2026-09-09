@@ -9,7 +9,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Blocks;
 
-/** Eleven-use heart that replaces the clicked block with lava, or water while sneaking. */
 public final class BloodyMaidenHeartItem extends Item {
     public BloodyMaidenHeartItem(Properties properties) {
         super(properties);

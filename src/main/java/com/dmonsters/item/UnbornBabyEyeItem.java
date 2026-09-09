@@ -10,7 +10,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
-/** Removes a clicked block and returns its block item, matching the original eye behavior. */
 public final class UnbornBabyEyeItem extends Item {
     public UnbornBabyEyeItem(Properties properties) {
         super(properties);

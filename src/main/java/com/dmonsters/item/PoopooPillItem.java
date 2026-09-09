@@ -18,7 +18,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUseAnimation;
 import net.minecraft.world.level.Level;
 
-/** High-risk consumable restoring the original full-hunger requirement and Dump effect. */
 public final class PoopooPillItem extends Item {
     public PoopooPillItem(Properties properties) {
         super(properties);

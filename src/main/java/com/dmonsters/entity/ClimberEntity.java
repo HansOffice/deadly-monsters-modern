@@ -41,9 +41,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import org.jspecify.annotations.Nullable;
 
-/**
- * Native 26.2 port of the original Climber monster.
- */
 public final class ClimberEntity extends Monster {
     private static final EntityDataAccessor<Byte> DATA_FLAGS_ID =
             SynchedEntityData.defineId(ClimberEntity.class, EntityDataSerializers.BYTE);

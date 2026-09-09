@@ -12,13 +12,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
-/**
- * Modern port of the original Rebar item interaction.
- *
- * Using rebar on vanilla stone/cobblestone consumes one rebar (except in
- * creative mode, via ItemStack#consume semantics) and replaces the block with
- * its strengthened Deadly Monsters counterpart.
- */
 public final class RebarItem extends Item {
     public RebarItem(Properties properties) {
         super(properties);

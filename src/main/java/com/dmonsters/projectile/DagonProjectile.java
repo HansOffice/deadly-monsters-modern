@@ -14,7 +14,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 
-/** Throwable Dagon: deals five damage and returns the Dagon item on impact. */
 public final class DagonProjectile extends ThrowableItemProjectile {
     public DagonProjectile(EntityType<? extends DagonProjectile> type, Level level) {
         super(type, level);

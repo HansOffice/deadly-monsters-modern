@@ -22,9 +22,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
-/**
- * Native 26.2 port of the original Freezer monster.
- */
 public final class FreezerEntity extends Monster {
     private static final int FREEZE_INTERVAL = 40;
     private int freezeTicks;

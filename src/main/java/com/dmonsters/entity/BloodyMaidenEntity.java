@@ -20,7 +20,6 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
-/** Native 26.2 port of the original Bloody Maiden monster. */
 public final class BloodyMaidenEntity extends Monster {
     private static final EntityDataAccessor<Boolean> DATA_TRIGGERED =
             SynchedEntityData.defineId(BloodyMaidenEntity.class, EntityDataSerializers.BOOLEAN);

@@ -6,7 +6,6 @@ import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 
-/** Anchor pole for the original mesh fence system. */
 public final class MeshFencePoleBlock extends FenceBlock {
     public MeshFencePoleBlock(BlockBehaviour.Properties properties) {
         super(properties);

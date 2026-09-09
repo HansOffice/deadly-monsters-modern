@@ -17,7 +17,6 @@ import net.minecraft.world.item.SpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-/** Item registry retaining the original 1.12.2 registry names. */
 public final class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(DeadlyMonsters.MOD_ID);
 

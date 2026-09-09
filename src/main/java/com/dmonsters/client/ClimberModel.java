@@ -12,9 +12,6 @@ import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 
-/**
- * Modern model-layer port of the original 64x64 Climber model.
- */
 public final class ClimberModel extends EntityModel<ClimberRenderState> {
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(
             Identifier.fromNamespaceAndPath(DeadlyMonsters.MOD_ID, "climber"), "main");
@@ -120,8 +117,6 @@ public final class ClimberModel extends EntityModel<ClimberRenderState> {
         this.rightArm.yRot = -(0.1F - attack2 * 0.6F);
         this.leftArm.yRot = 0.1F - attack2 * 0.6F;
 
-        // The 1.12 model accidentally tested EntityMutantSteve here, making the
-        // Climber always use the non-raised branch. Preserve that visible result.
         float baseArmAngle = -(float) Math.PI / 2.25F;
         this.rightArm.xRot = baseArmAngle + attack2 * 1.2F - attack * 0.4F;
         this.leftArm.xRot = baseArmAngle + attack2 * 1.2F - attack * 0.4F;

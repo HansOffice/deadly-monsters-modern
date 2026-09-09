@@ -12,11 +12,9 @@ import net.neoforged.neoforge.common.world.BiomeModifier;
 import net.neoforged.neoforge.common.world.MobSpawnSettingsBuilder;
 import net.neoforged.neoforge.common.world.ModifiableBiomeInfo;
 
-/** Adds the original monster spawn entry using the live COMMON config weight at server/world startup. */
 public record ConfigSpawnBiomeModifier(
         HolderSet<Biome> biomes,
         MobSpawnSettings.SpawnerData spawner) implements BiomeModifier {
-
     @Override
     public void modify(Holder<Biome> biome, Phase phase, ModifiableBiomeInfo.BiomeInfo.Builder builder) {
         if (phase != Phase.ADD || !this.biomes.contains(biome)) {

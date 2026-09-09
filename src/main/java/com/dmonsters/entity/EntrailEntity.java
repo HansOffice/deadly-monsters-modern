@@ -23,7 +23,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
-/** Native 26.2 port of the original Entrail monster. */
 public final class EntrailEntity extends Monster {
     private static final Identifier SLIME_ID = Identifier.fromNamespaceAndPath("minecraft", "slime");
 

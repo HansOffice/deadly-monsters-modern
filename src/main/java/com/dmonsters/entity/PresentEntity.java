@@ -27,7 +27,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
-/** Native 26.2 port of the original Present monster and its cage attack. */
 public final class PresentEntity extends Monster {
     private int cageCooldown;
 
@@ -99,7 +98,6 @@ public final class PresentEntity extends Monster {
 
         EntityType<?> creeperType = BuiltInRegistries.ENTITY_TYPE.getValue(Identifier.withDefaultNamespace("creeper"));
         if (creeperType != null) {
-            // The 1.12.2 floor/ceiling loop reaches the center twice, spawning two Creepers at the torch.
             for (int i = 0; i < 2; i++) {
                 Entity spawned = creeperType.create(level, EntitySpawnReason.TRIGGERED);
                 if (spawned instanceof Creeper creeper) {

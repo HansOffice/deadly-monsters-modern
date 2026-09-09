@@ -23,7 +23,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 
-/** Native 26.2 port of the original Lucky Egg random impact outcomes. */
 public final class LuckyEggProjectile extends ThrowableItemProjectile {
     private static final List<Item> TIER_0 = List.of(
             Items.WOODEN_SWORD, Items.LEATHER_BOOTS, Items.LEATHER_CHESTPLATE, Items.LEATHER_HELMET, Items.LEATHER_LEGGINGS);

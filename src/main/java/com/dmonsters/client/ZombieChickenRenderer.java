@@ -6,7 +6,6 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.Identifier;
 
-/** Dedicated Zombie Chicken renderer using the original model geometry and texture. */
 public final class ZombieChickenRenderer extends MobRenderer<ZombieChickenEntity, ZombieChickenRenderState, ZombieChickenModel> {
     private static final Identifier TEXTURE = Identifier.fromNamespaceAndPath(
             DeadlyMonsters.MOD_ID, "textures/entity/zombie_chicken.png");

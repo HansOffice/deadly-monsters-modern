@@ -1,70 +1,59 @@
-# Deadly Monsters — NeoForge 26.2 Port
+# Deadly Monsters: Modern
 
-A native NeoForge port of [ACGaming/deadly-monsters](https://github.com/ACGaming/deadly-monsters) from Minecraft Forge 1.12.2 to Minecraft 26.2.
+经典恐怖怪物模组 Deadly Monsters 的高版本移植版，适用于 Minecraft 26.2，支持 NeoForge 与 Fabric。
 
-The port keeps the original `dmonsters` registry IDs and gameplay identity while replacing the removed Forge 1.12.2 APIs with current Minecraft/NeoForge systems.
+移植自 [bigbang87/deadly-monsters](https://github.com/bigbang87/deadly-monsters) 与 [ACGaming 的 1.12.2 维护版](https://github.com/ACGaming/deadly-monsters)。保留了原版的全部 12 种怪物、防御工事与特色道具。
 
-## Target
+## 下载
 
-- Minecraft: **26.2**
-- NeoForge: **26.2.0.75**
-- ModDevGradle: **2.0.146**
-- Gradle: **9.2.1**
-- Java: **25**
-- Mod ID: `dmonsters`
+前往 [Releases](https://github.com/HansOffice/deadly-monsters-modern/releases) 页面下载对应加载器的构建：
+- **NeoForge**：`dmonsters-neoforge-1.0-26.2.jar`
+- **Fabric**：`dmonsters-fabric-1.0-26.2.jar`（需安装 Fabric API）
 
-## Status
+需要 Java 25 运行时。
 
-The source, gameplay content, client renderers, resources and data migration are complete. Runtime/gameplay validation is intentionally tracked separately in [`TESTING.md`](TESTING.md).
+## 内容介绍
 
-Ported content includes:
+### 生物
+- **突变史蒂夫 (Mutant Steve)**：白天会自燃的高速近战怪物，攻击会破坏周围方块
+- **霜冻异怪 (Freezer)**：生成于极寒群系，攻击附带减速，行走时会冻结脚下的水面
+- **攀爬者 (Climber)**：能攀爬垂直墙壁，免疫蜘蛛网减速与中毒效果
+- **粘液飞头 (Entrail)**：在空中缓慢飘浮，受到非火焰伤害时会分裂出史莱姆
+- **腹中胎儿 (Unborn Baby)**：身形小巧且移速较快，靠近时会让玩家间歇失明
+- **堕落领袖 (Fallen Leader)**：近战吸血，掉落击退极强的堕落领袖脊柱
+- **血腥少女 (Bloody Maiden)**：平时沉睡伪装成普通装饰，惊醒后攻击力极高
+- **僵尸鸡 (Zombie Chicken)**：敌对小鸡，会主动攻击玩家并感染普通鸡
+- **礼盒怪 (Present)**：伪装成礼物盒，受到攻击后把玩家关进牢笼并刷新苦力怕
+- **陌生人 (Stranger)**：潜伏在暗处避开直视，靠近时伴随惊悚音效
+- **闹鬼牛 (Haunted Cow)**：必须用剑或弓击杀，使用其他武器攻击会强制将时间切到夜晚
+- **异形水鬼 (Topielec)**：水下高速追踪，会将玩家强行往深水里拖拽
 
-- all 12 original monsters with native 26.2 entity types, attributes, AI and renderers;
-- all original monster spawn eggs;
-- the original blocks and their special behavior;
-- Rebar, four Harpoons, Lucky Egg, Dagon and the original monster-drop utility items;
-- Lucky Egg and Dagon projectiles;
-- original textures and sounds;
-- modern blockstates, models and item definitions;
-- all 17 original crafting recipes;
-- entity/block loot tables using current item IDs and loot syntax;
-- configurable monster health, strength, speed, natural-spawn weighting and disable switches;
-- special configuration for Mutant Steve, Unborn Baby, Haunted Cow and Topielec;
-- natural spawning through a config-aware NeoForge biome modifier.
+### 防御工事与物品
+- **强化建筑**：手持强化钢筋右键石头或圆石可转化为抗爆方块，潜行右键可取回钢筋
+- **铁丝网与围栏**：生物穿过时会受到持续伤害并大幅减速
+- **灵魂之眼**：放置后会吞噬靠近的生物，有几率吐出绿宝石或铁锭
+- **圣诞树与礼物盒**：圣诞树会周期性结出礼物盒，破坏随机获得物资或触发危险
+- **四阶鱼叉**：分为石、铁、钻石、黑曜石四档，水下击中可捕鱼，对水鬼有克制增伤
+- **特殊战利品**：幸运蛋（随机触发效果）、血腥少女之心（生成水或岩浆源）、胎儿之眼（完整采集方块）、日光降临（直接将黑夜切为白天）等
 
-See [`PORTING.md`](PORTING.md) for compatibility decisions and deliberate modernizations.
+## 配置
 
-## Development runs
+配置文件位于 `config/dmonsters-common.toml`：
+- 可统一调整全局生命、伤害与移速倍率
+- 每种怪物均可单独调整数值倍率、生成权重，或直接关闭生成
+- 支持开关突变史蒂夫破坏方块、闹鬼牛强制转夜、水鬼限制鱼叉伤害等机制
 
-A system Gradle 9.2.1 installation is currently used; this repository does not ship a Gradle wrapper.
+## 构建
 
 ```bash
-gradle runClient
-gradle runServer
-gradle runData
 gradle build
 ```
 
-Use JDK 25 for all development and build commands.
+构建产物输出在 `build/libs/` 目录下。
 
-## Configuration
+## 鸣谢与协议
 
-NeoForge generates the Deadly Monsters common configuration on first run. The port preserves the original default monster multipliers and spawn rates.
+- 原模组：[bigbang87/deadly-monsters](https://github.com/bigbang87/deadly-monsters)
+- 1.12.2 修复版：[ACGaming/deadly-monsters](https://github.com/ACGaming/deadly-monsters)
 
-Natural-spawn `spawnRate` and `disabled` settings affect biome spawn lists and should be changed before starting/restarting the world or dedicated server.
-
-## Compatibility decisions
-
-This is a native port, not a compatibility shim. A few 1.12.2 implementation details cannot or should not be reproduced literally:
-
-- **Hostile Worlds Invasions integration** is not included because the 26.2 port has no dependency on that legacy integration.
-- The old numeric **`dayLengthTicks`** option is retired. Minecraft 26.2 uses data-driven world clocks/timelines; Sunlight Drop and Haunted Cow use the active Overworld clock markers instead.
-- The original Topielec deep-water search contained an effectively every-tick wide-area scan. The visible behavior is preserved with a bounded refresh cadence rather than copying the performance bug.
-- Legacy metadata items were mapped to their modern IDs (for example fish, clay balls, fireworks, dyes and stained glass).
-- Modern interaction permission checks are used where old direct block replacement would otherwise bypass current protection APIs.
-
-## Upstream and license
-
-Original project: [ACGaming/deadly-monsters](https://github.com/ACGaming/deadly-monsters)
-
-The upstream project is licensed under the MIT License. The original copyright and license notice are retained in [`LICENSE`](LICENSE).
+本项目采用 [MIT](LICENSE) 协议开源。

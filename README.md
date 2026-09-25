@@ -49,7 +49,7 @@
 gradle build
 ```
 
-构建产物输出在 `build/libs/` 目录下。
+构建产物输出在 `build/libs/` 目录下
 
 ## 鸣谢与协议
 

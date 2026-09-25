@@ -1,6 +1,6 @@
 # Deadly Monsters: Modern
 
-经典恐怖怪物模组 Deadly Monsters 的高版本移植版，适用于 Minecraft 26.2，支持 NeoForge 与 Fabric。
+经典恐怖怪物模组 Deadly Monsters 的高版本移植版，适用于 Minecraft 26.2，支持 NeoForge 与 Fabric
 
 移植自 [bigbang87/deadly-monsters](https://github.com/bigbang87/deadly-monsters) 与 [ACGaming 的 1.12.2 维护版](https://github.com/ACGaming/deadly-monsters)。保留了原版的全部 12 种怪物、防御工事与特色道具。
 
@@ -10,7 +10,7 @@
 - **NeoForge**：`dmonsters-neoforge-1.0-26.2.jar`
 - **Fabric**：`dmonsters-fabric-1.0-26.2.jar`（需安装 Fabric API）
 
-需要 Java 25 运行时。
+需要 Java 25 运行
 
 ## 内容介绍
 
@@ -56,4 +56,4 @@ gradle build
 - 原模组：[bigbang87/deadly-monsters](https://github.com/bigbang87/deadly-monsters)
 - 1.12.2 修复版：[ACGaming/deadly-monsters](https://github.com/ACGaming/deadly-monsters)
 
-本项目采用 [MIT](LICENSE) 协议开源。
+本项目采用 [MIT](LICENSE) 协议开源
